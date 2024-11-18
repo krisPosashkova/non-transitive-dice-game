@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import { MESSAGES } from "../messages";
+import { MESSAGES } from "../messages.js";
 
 export default class CryptoManager {
     generateSecureKey() {
