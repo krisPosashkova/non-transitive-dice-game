@@ -1,0 +1,13 @@
+# Node.js
+node_modules/
+
+# Environment Variables
+.env
+
+# Editor/IDE files
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
