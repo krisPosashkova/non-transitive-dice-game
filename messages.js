@@ -33,7 +33,8 @@ export const MESSAGES = {
         insufficientArguments: "Please provide at least 3 dice configurations.",
         invalidCharacters: (diceNumber, config) => `Invalid dice configuration ${diceNumber} - [${config}]: Only numbers and commas are allowed. Please remove any non-numeric characters or decimals.`,
         invalidDiceLength: (diceNumber, sides) => `Dice configuration ${diceNumber} - [${sides}] contains invalid sides. Each side must have exactly 6 characters.`,
-        nonIntegerValues: (diceNumber, sides) => `Dice configuration ${diceNumber} - [${sides}] contains non-integer values. Please use only whole numbers.`
+        nonIntegerValues: (diceNumber, sides) => `Dice configuration ${diceNumber} - [${sides}] contains non-integer values. Please use only whole numbers.`,
+        generateSecureRandomNumber: "Parameter 'max' must be a positive integer."
     },
     usageExample: {
         title: "\n=== Dice Game Usage ===",

@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import { MESSAGES } from "../messages";
 
 export default class CryptoManager {
     generateSecureKey() {
@@ -6,18 +7,13 @@ export default class CryptoManager {
     }
 
     generateSecureRandomNumber(max) {
-        const range = max - 0;
-        const bytes = Math.ceil(Math.log2(range) / 8);
-        const maxNum = Math.pow(256, bytes);
-        const maxValidNum = maxNum - (maxNum % range);
-        
-        let randomNum;
-        do {
-            randomNum = crypto.randomInt(0, maxValidNum);
-        } while (randomNum >= maxValidNum);
-        
-        return randomNum % max;
+        if (max <= 0 || !Number.isInteger(max)) {
+            throw new Error(MESSAGES.errors.generateSecureRandomNumber);
+        }
+    
+        return crypto.randomInt(0, max);
     }
+    
 
     generateCryptoBundle({range}) {
         const key = this.generateSecureKey();
